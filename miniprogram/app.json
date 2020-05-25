@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/me/me",
     "pages/create/create",
     "pages/home/home",
     "pages/query/query",
@@ -17,7 +18,7 @@
     "pages/im/im",
     "pages/im/room/room",
    
-    "pages/me/me",
+   
     
     "pages/workload/workload"
   ],

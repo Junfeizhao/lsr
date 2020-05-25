@@ -1,5 +1,10 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+
+    "mp-cells": "../../components/weui/cells/cells",
+      "mp-cell": "../../components/weui/cell/cell"
+  },
   "navigationBarTitleText": "个人中心",
-  "navigationBarTextStyle": "black"
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff"
 }

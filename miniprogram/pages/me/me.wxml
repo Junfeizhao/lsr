@@ -1,2 +1,39 @@
 <!--miniprogram/pages/me/me.wxml-->
-<text>miniprogram/pages/mssssssssssssse/me.wxml</text>
+<view class="pg_header">
+ <view class="avatar_wrap">
+  <image src="{{avatarUrl}}"></image>
+ </view>
+ <view class="nickname_wrap">
+ {{nickName}}
+ </view>
+</view>
+
+<view class="pg_body">
+ <mp-cells>
+  <view class="tit_wrap" style="margin:20px 20px;">
+  功能中心
+  </view>
+  <mp-cell  class="mycell" title="员工认证" link>
+    <image slot="icon" src="../../images/prove.png" style="margin-top:-3px;margin-right: 6px;vertical-align: middle;width:20px; height: 20px;"></image>
+  </mp-cell>
+ </mp-cells>
+
+ <mp-cells>
+  <view class="tit_wrap" style="margin:20px 20px;">
+  服务中心
+  </view>
+  <mp-cell  class="mycell" title="帮助中心" link>
+    <image slot="icon" src="../../images/help.png" style="margin-top:-3px;margin-right: 6px;vertical-align: middle;width:20px; height: 20px;"></image>
+  </mp-cell>
+  <mp-cell  class="mycell" title="在线客服" link>
+    <image slot="icon" src="../../images/_kefu.png" style="margin-top:-3px;margin-right: 6px;vertical-align: middle;width:20px; height: 20px;"></image>
+  </mp-cell>
+  <mp-cell  class="mycell" title="问题反馈" link>
+    <image slot="icon" src="../../images/feedback.png" style="margin-top:-3px;margin-right: 6px;vertical-align: middle;width:20px; height: 20px;"></image>
+  </mp-cell>
+ </mp-cells>
+
+</view>
+
+<view class="pg_footer">
+</view>
