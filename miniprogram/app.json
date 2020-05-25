@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/orders/orders",
     "pages/home/home",
+    "pages/create/create",
+    "pages/query/query",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -41,6 +42,13 @@
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-active.png"
       },
+      {
+        "pagePath": "pages/query/query",
+        "text": "工单",
+        "iconPath": "images/order.png",
+        "selectedIconPath": "images/order-active.png"
+      },
+    
     
       {
         "pagePath": "pages/workload/workload",
@@ -53,7 +61,6 @@
         "text": "个人中心",
         "iconPath": "images/me.png",
         "selectedIconPath": "images/me-active.png"
-    
       }
     ]
   }

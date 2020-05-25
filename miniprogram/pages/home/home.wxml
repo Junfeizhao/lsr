@@ -8,8 +8,18 @@
   </view>
 
   <view class="pg_body">
+  <view class="{{proveClass}}">
+  <mp-icon icon="volume-down" color="rgb(217,137,77)" size="{{20}}"></mp-icon>
+  <view class="prove_con">
+  <span class="text">部分功能需要认证后才能使用哦~</span>
+  <span class="prove_btn">员工认证</span>
+  <span class="close_btn" bindtap="changeProveClass">x</span>
+  </view>
+   <view>
+   </view>
+  </view>
     <view class="row1 row">
-       <view class="left">
+       <view class="left" bindtap="toCreate">
         <view class="img-wrap">
           <image src="../../images/create.png"></image>
         </view>

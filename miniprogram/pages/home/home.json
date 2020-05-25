@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-   
+    "mp-icon": "../../components/weui/icon/icon"
   } ,
   "navigationBarTitleText": "首页",
     "navigationBarTextStyle": "black"

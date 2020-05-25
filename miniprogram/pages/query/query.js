@@ -1,14 +1,11 @@
-// miniprogram/pages/home/home.js
+// miniprogram/pages/query/query.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    proveClass:"prove_wrap_default",
-    imgUrls: [
-      '../images/bac.png',
-  ],
+
   },
 
   /**
@@ -65,19 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  changeProveClass:function(){
-    this.setData({
-      proveClass:'prove_wrap_close'
-    })
-  },
-
-  toCreate:function(){
-    wx.navigateTo({
-      url: '../create/create',
-    })
   }
-
-
 })

@@ -106,6 +106,49 @@
   height:50px;
   /* border:1px solid black; */
 }
+.prove_wrap_default{
+  transition: all 1s;
+  padding:0px 5px;
+  align-items: center;
+  display: flex;
+  margin-top:5px;
+  width:100%;
+  height:30px;
+  background:rgb(255,238,222);
+  overflow: hidden;
+}
+
+.prove_wrap_close{
+  overflow: hidden;
+  transition: all 1s;
+  padding:0px 5px;
+  align-items: center;
+  display: flex;
+  margin-top:5px;
+  width:100%;
+  height:0px;
+  background:rgb(255,238,222);
+}
+
+.prove_con .text{
+  font-size:14px;
+  color:rgb(217,137,77);
+}
+
+.prove_btn{
+  margin-left:5px;
+  padding:1px 5px;
+  background:#fff;
+  border:1px solid rgb(217,137,77);
+  border-radius: 3px;
+  color:rgb(217,137,77);
+  font-size: 14px;
+}
+.close_btn{
+  margin-left:30px;
+  font-size: 14px;
+  color:rgb(217,137,77);
+}
 
 
 
