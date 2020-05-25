@@ -7,14 +7,14 @@
 <mp-form>
  <mp-cells>
   <mp-cell prop="mobile" title="快递单号" ext-class=" weui-cell_vcode">
-                    <input   bindinput="formInputChange" data-field="mobile" class="weui-input input" placeholder="请输入快递单号"/>
-                    <view slot="footer" class="weui-vcode-btn imgwrap"><image src="../../images/scan.png"></image></view>
+                    <input   bindinput="bindInputChange" value='{{formData.goods_number}}' data-field="goods_number" class="weui-input input" placeholder="请输入快递单号"/>
+                    <view style="z-index:999;" bindtap="scanCode" slot="footer" class="weui-vcode-btn imgwrap"><image src="../../images/scan.png"></image></view>
                 </mp-cell>
  <mp-cell prop="qq" title="客户姓名" ext-class="">
-                    <input  bindinput="formInputChange" data-field="qq" class="weui-input input" placeholder="请输入客户姓名"/>
+                    <input  bindinput="bindInputChange" data-field="owner_name" class="weui-input input" placeholder="请输入客户姓名"/>
                 </mp-cell>
                 <mp-cell prop="qq" title="手机号" ext-class="">
-                    <input  bindinput="formInputChange" data-field="qq" class="weui-input input" placeholder="请输入客户手机"/>
+                    <input  type="number" bindinput="bindInputChange" data-field="owner_phone" class="weui-input input" placeholder="请输入客户手机"/>
                 </mp-cell>
         
             </mp-cells>
@@ -36,7 +36,7 @@
   <view class="staff_name">创建人：赵俊飞</view>
   <view class="create_date">2020/5/23 19:59</view>
   </view>
-  <view class="footer_right">
+  <view class="{{footerRight}}">
   创建
   </view>
 </view>

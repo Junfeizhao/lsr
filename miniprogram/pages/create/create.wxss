@@ -26,10 +26,21 @@
   color:#888;
 }
 
-.footer_right{
+.footer_right_default{
   width:34%;
   height:100%;
   background:rgb(208,208,208);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#fff;
+  /* border:1px solid black; */
+}
+
+.footer_right_active{
+  width:34%;
+  height:100%;
+  background:rgb(236,105,33);
   display: flex;
   justify-content: center;
   align-items: center;
