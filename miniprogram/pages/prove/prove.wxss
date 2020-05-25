@@ -1,0 +1,33 @@
+/* miniprogram/pages/prove/prove.wxss */
+.mycell{
+  font-size: 14px;
+  color:#444;
+}
+.input{
+  margin-left: 40px;
+}
+.btn_wrap_default{
+  width:70%!important;
+  height:35px!important;
+  margin:80px auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center;
+  background:rgb(208,208,208)!important;
+  color:#fff !important;
+  font-size: 16px !important;
+ border-radius: 3px !important;
+}
+
+.btn_wrap_active{
+  width:70%!important;
+  height:35px!important;
+  margin:80px auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center;
+  background:rgb(0,178,106)!important;
+  color:#fff !important;
+  font-size: 16px !important;
+ border-radius: 3px !important;
+}

@@ -1,0 +1,21 @@
+<!--miniprogram/pages/prove/prove.wxml-->
+<view class="pg_header">
+<mp-cells  title="输入账号本人的身份信息">
+<mp-cell class="mycell" title="员工姓名">
+ <input bindinput="bindInputChange" class="input" data-field="staff_name" placeholder="请输入本人姓名"></input>
+</mp-cell>
+<mp-cell class="mycell" title="身份证号">
+<input  bindinput="bindInputChange"  class="input" data-field="staff_idCard" placeholder="请输入身份证号"></input>
+</mp-cell>
+<mp-cell class="mycell" title="手机号" >
+<input  bindinput="bindInputChange"  class="input" data-field="staff_phone" placeholder="请输入手机号"></input>
+</mp-cell>
+</mp-cells>
+</view>
+
+<button class="{{btnClass}}"  disabled="{{btnForbidden}}" bindtap="submit">
+  确认提交
+</button>
+
+<view class="pg_footer">
+</view>
