@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+     class1:"item_active",
+     class2:"item_default",
+     class3:"item_default",
+     class4:"item_default"
   },
 
   /**
@@ -62,5 +65,33 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  bindQueryClassifyChange:function(e){
+     console.log(e.target.dataset.classnum);
+     if(e.target.dataset.classnum){
+      this.setData({
+        class1:"item_default",
+        class2:"item_default",
+        class3:"item_default",
+        class4:"item_default"
+      });
+      this.setData({
+        [`class${e.target.dataset.classnum}`]:'item_active'
+      });
+     }
+     
+  },
+  scanCode:function(){
+    let that =this;
+    wx.scanCode({
+      scanType:'barCode',
+      success (res) {
+        // console.log(res.result)
+        that.setData({
+          [`formData.goods_number`]:res.result
+        })
+      }
+    })
+  },
+
 })
