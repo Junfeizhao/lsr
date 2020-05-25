@@ -1,0 +1,93 @@
+<!--miniprogram/pages/home/home.wxml-->
+<view class="wrapper">
+  <view class="pg_header">
+  <view class="slide-wrap">
+    <image src="../../images/bac.png"></image>
+  </view>
+  
+  </view>
+
+  <view class="pg_body">
+    <view class="row1 row">
+       <view class="left">
+        <view class="img-wrap">
+          <image src="../../images/create.png"></image>
+        </view>
+        <view class="text-wrap">
+         <view class="big">
+          创建订单
+         </view>
+         <view class="small">
+         填写收件人信息
+         </view>
+        </view>
+       </view>
+       <view class="liney">
+       </view>
+       <view class="right">
+          <view class="img-wrap">
+          <image src="../../images/checked.png"></image>
+        </view>
+        <view class="text-wrap">
+         <view class="big">
+          审核打包
+         </view>
+         <view class="small">
+         确认工单
+         </view>
+        </view>
+       </view>
+    </view>
+    <view class="linex"></view>
+    <view class="row2 row">
+     <view class="left">
+     <view class="img-wrap">
+          <image src="../../images/err.png"></image>
+        </view>
+        <view class="text-wrap">
+         <view class="big">
+          错误订单
+         </view>
+         <view class="small">
+         统计出错订单
+         </view>
+        </view>
+       </view>
+       <view class="liney">
+       </view>
+       <view class="right">
+        <view class="img-wrap">
+          <image src="../../images/load.png"></image>
+        </view>
+        <view class="text-wrap">
+         <view class="big">
+          工作量化
+         </view>
+         <view class="small">
+         统计工作量
+         </view>
+        </view>
+       </view>
+    </view>
+  </view>
+  <view class="row3">
+   <view class="item-wrap">
+   <image src="../../images/service.png"></image>
+   <view class="title">服务网点</view>
+   </view>
+    <view class="item-wrap">
+     <image src="../../images/staff.png"></image>
+   <view class="title">员工信息</view>
+   </view>
+    <view class="item-wrap">
+     <image src="../../images/about.png"></image>
+   <view class="title">关于我们</view>
+   </view>
+    <view class="item-wrap">
+     <image src="../../images/kefu.png"></image>
+   <view class="title">在线客服</view>
+   </view>
+  </view>
+  <view class="pg_footer">
+  </view>
+</view>

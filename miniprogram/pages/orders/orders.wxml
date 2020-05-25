@@ -1,0 +1,42 @@
+
+<view class="pg_header">
+
+</view>
+
+<view class="pg_body">
+<mp-form>
+ <mp-cells>
+  <mp-cell prop="mobile" title="快递单号" ext-class=" weui-cell_vcode">
+                    <input   bindinput="formInputChange" data-field="mobile" class="weui-input input" placeholder="请输入快递单号"/>
+                    <view slot="footer" class="weui-vcode-btn imgwrap"><image src="../../images/scan.png"></image></view>
+                </mp-cell>
+ <mp-cell prop="qq" title="客户姓名" ext-class="">
+                    <input  bindinput="formInputChange" data-field="qq" class="weui-input input" placeholder="请输入客户姓名"/>
+                </mp-cell>
+                <mp-cell prop="qq" title="手机号" ext-class="">
+                    <input  bindinput="formInputChange" data-field="qq" class="weui-input input" placeholder="请输入客户手机"/>
+                </mp-cell>
+        
+            </mp-cells>
+           <view class="weui-cells weui-cells_after-title" style="padding:10px 0;border:0;">
+          <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts}}">
+                        <view class="weui-select"> <span>快递类型</span><span style="margin-left:50px;color:#888;">{{accounts[accountIndex]}}</span></view>
+                    </picker>
+                </view>
+            </view>
+            </view>
+        </mp-form>
+  
+</view>
+
+<view class="pg_footer">
+  <view class="footer_left">
+  <view class="staff_name">创建人：赵俊飞</view>
+  <view class="create_date">2020/5/23 19:59</view>
+  </view>
+  <view class="footer_right">
+  创建
+  </view>
+</view>
