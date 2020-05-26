@@ -33,10 +33,10 @@
 
 <view class="pg_footer">
   <view class="footer_left">
-  <view class="staff_name">创建人：赵俊飞</view>
-  <view class="create_date">2020/5/23 19:59</view>
+  <view class="staff_name">创建人：{{proveInfo.staff_name}}</view>
+  <view class="create_date">{{time}}</view>
   </view>
-  <view class="{{footerRight}}">
+  <button disabled="{{disabled}}" class="{{footerRight}}" bindtap="createWork">
   创建
-  </view>
+  </button>
 </view>

@@ -12,7 +12,7 @@
   <mp-icon icon="volume-down" color="rgb(217,137,77)" size="{{20}}"></mp-icon>
   <view class="prove_con">
   <span class="text">部分功能需要认证后才能使用哦~</span>
-  <span class="prove_btn">员工认证</span>
+  <span class="prove_btn" bindtap="toProve" >员工认证</span>
   <span class="close_btn" bindtap="changeProveClass">x</span>
   </view>
    <view>
@@ -34,7 +34,7 @@
        </view>
        <view class="liney">
        </view>
-       <view class="right">
+       <view class="right" bindtap="toQuery">
           <view class="img-wrap">
           <image src="../../images/checked.png"></image>
         </view>

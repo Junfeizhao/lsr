@@ -1,10 +1,14 @@
 {
   "pages": [
-    "pages/query/query",
-    "pages/prove/prove",
-    "pages/me/me",
-    "pages/create/create",
     "pages/home/home",
+    "pages/create/create",
+    "pages/createsuccess/createsuccess",
+    
+    
+    "pages/prove/prove",
+    "pages/provesuccess/provesuccess",
+    "pages/query/query",
+    "pages/me/me",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -19,7 +23,7 @@
     "pages/im/im",
     "pages/im/room/room",
     "pages/workload/workload"
-   
+    
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

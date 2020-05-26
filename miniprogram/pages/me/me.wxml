@@ -5,6 +5,9 @@
  </view>
  <view class="nickname_wrap">
  {{nickName}}
+ <view>
+ 13298333864
+ </view>
  </view>
 </view>
 
@@ -13,7 +16,7 @@
   <view class="tit_wrap" style="margin:20px 20px;">
   功能中心
   </view>
-  <mp-cell  class="mycell" title="员工认证" link>
+  <mp-cell  class="mycell" title="员工认证" link url="../prove/prove">
     <image slot="icon" src="../../images/prove.png" style="margin-top:-3px;margin-right: 6px;vertical-align: middle;width:20px; height: 20px;"></image>
   </mp-cell>
  </mp-cells>

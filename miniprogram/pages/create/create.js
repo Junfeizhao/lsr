@@ -1,19 +1,28 @@
 // miniprogram/pages/orders/orders.js
+const util=require('../../util')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    disabled:true,
+    time:util.formatTime(new Date()),
     footerRight:'footer_right_default',
     accounts: ["京东", "韵达", "申通"],
     accountIndex: 0,
     formData:{
-      staff_name:'',
+      create_staff:'',
+      create_staff_openid:"",
       goods_number:"",
       owner_name:"",
       owner_phone:"",
       express_type:"京东"
+      
+    },
+    proveInfo:{
+      staff_name:"",
+      isProve:""
     }
   },
 
@@ -21,7 +30,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+  this.onGetOpenid();
+  this.timer();
   },
 
   /**
@@ -94,7 +104,7 @@ bindInputChange:function(e){
     [`formData.${e.target.dataset.field}`]:e.detail.value
   })
   this.watchBtnStatus();
-  // console.log(this.data.formData);
+  console.log(this.data.formData);
 },
 
 scanCode:function(){
@@ -113,12 +123,109 @@ scanCode:function(){
 watchBtnStatus:function(){
   if(this.data.formData.goods_number!="" && this.data.formData.owner_name!="" && this.data.formData.owner_phone!=""){
      this.setData({
-      footerRight:'footer_right_active'
+      footerRight:'footer_right_active',
+      disabled:false
      })
   }else{
     this.setData({
-     footerRight:'footer_right_default'
+     footerRight:'footer_right_default',
+     disabled:true
     })
   }
-}
+},
+
+onGetOpenid: function() {
+  // 调用云函数
+  wx.cloud.callFunction({
+    name: 'login',
+    data: {},
+    success: res => {
+      console.log('[云函数] [login] user openid: ', res.result.openid)
+      this.onQueryProve(res.result.openid);
+      this.setData({
+        [`formData.create_staff_openid`]: res.result.openid
+      })
+    },
+    fail: err => {
+      console.error('[云函数] [login] 调用失败', err)
+    }
+  })
+},
+onQueryProve:function(openid){
+  var that =this;
+   // 调用云函数
+   wx.cloud.callFunction({
+     name: 'queryprove',
+     data: {openid:openid},
+     success: res => {
+       // console.log(res.result.data[0])
+       if(res.result.data.length>0){
+         this.setData({
+         [`proveInfo.isProve`]:true,
+          [`proveInfo.staff_name`]:res.result.data[0].staff_name,
+          [`formData.create_staff`]:res.result.data[0].staff_name
+        })
+       }else{
+         console.log(99)
+         that.setData({
+           [`proveInfo.isProve`]:false,
+           showBtn:true
+         })
+       }
+     },
+     fail: err => {
+       console.log(err)
+     }
+   })
+},
+timer:function(){
+  setInterval(()=>{
+    this.setData({
+      time:util.formatTime(new Date())
+    })
+  },1000)
+},
+
+createWork:function(){
+  let that =this;
+  function checkPhone(){ 
+    let phone =that.data.formData.owner_phone;
+    if(!(/^1[3456789]\d{9}$/.test(phone))){ 
+        return false; 
+    }else{
+      return true
+    } 
+  }
+  if(!checkPhone()){
+    wx.showToast({
+      icon:'none',
+      title: '手机号格式不正确',
+    })
+  }else{
+    this.setData({
+      [`formData.create_time`]:util.formatTime(new Date()),
+      disabled:true
+    })
+    // 调用云函数
+  wx.cloud.callFunction({
+    name: 'create',
+    data: this.data.formData,
+    success: res => {
+    //  console.log(res);
+    wx.navigateTo({
+      url: '../createsuccess/createsuccess',
+    })
+    },
+    fail: err => {
+      console.log(err);
+    }
+  })
+  }
+
+},
+
+
+
+
+
 })

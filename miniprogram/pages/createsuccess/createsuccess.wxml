@@ -1,0 +1,24 @@
+<!--miniprogram/pages/provesuccess/provesuccess.wxml-->
+<view class="wrapper">
+
+  <view class="pg_body">
+    <view class="img_wrap">
+     <image src="../../images/success.png"></image>
+    </view>
+    <view class="text1_wrap">
+    创建成功
+    </view>
+    <view class="text2_wrap" style="margin-top:7px;">
+    <!-- 您的信息已记录成功 -->
+    </view>
+     <view class="text2_wrap">
+     <!-- 我们会严格保证信息安全 -->
+    </view>
+  </view>
+</view>
+
+<view class="btn_wrap" bindtap="toCreate">
+完成
+</view>
+
+

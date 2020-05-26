@@ -1,0 +1,40 @@
+/* miniprogram/pages/provesuccess/provesuccess.wxss */
+.wrapper{
+  background: #fff;
+}
+.img_wrap image{
+  width:50px;
+  height:50px;
+}
+
+.pg_body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:200px;
+  height:200px;
+  /* border:1px solid black; */
+  margin:0 auto;
+}
+.text1_wrap{
+  font-size: 16px;
+  color:#444;
+}
+.text2_wrap{
+  font-size: 14px;
+  color:#444;
+}
+
+.btn_wrap{
+  background:rgb(254,118,33);
+  color:#fff;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:65%;
+  height:35px;
+  border-radius: 3px;
+  margin:70px auto;
+}

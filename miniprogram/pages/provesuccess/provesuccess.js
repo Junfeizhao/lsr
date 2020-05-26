@@ -1,14 +1,11 @@
-// miniprogram/pages/home/home.js
+// miniprogram/pages/provesuccess/provesuccess.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    proveClass:"prove_wrap_default",
-    imgUrls: [
-      '../images/bac.png',
-  ],
+
   },
 
   /**
@@ -66,29 +63,10 @@ Page({
   onShareAppMessage: function () {
 
   },
-
-  changeProveClass:function(){
-    this.setData({
-      proveClass:'prove_wrap_close'
-    })
-  },
-
-  toCreate:function(){
-    wx.navigateTo({
-      url: '../create/create',
-    })
-  },
-  toQuery:function(){
-    // console.log(6);
+  toMe:function(){
+    // console.log(66);
     wx.switchTab({
-      url: '../query/query',
-    })
-  },
-  toProve:function(){
-    wx.navigateTo({
-      url: '../prove/prove',
+      url: '../me/me',
     })
   }
-
-
 })

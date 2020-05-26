@@ -1,5 +1,22 @@
 <!--miniprogram/pages/prove/prove.wxml-->
 <view class="pg_header">
+
+<view wx:if="{{proveInfo.isProve}}">
+<mp-cells  title="信息录入成功后不可修改" >
+
+<mp-cell class="mycell" title="员工姓名" footer="{{proveInfo.staff_name}}">
+ 
+</mp-cell>
+<mp-cell class="mycell" title="身份证号" footer="{{proveInfo.staff_idCard}}">
+
+</mp-cell>
+<mp-cell class="mycell" title="手机号" footer="{{proveInfo.staff_phone}}">
+
+</mp-cell>
+</mp-cells>
+</view>
+
+<view wx:else>
 <mp-cells  title="输入账号本人的身份信息">
 <mp-cell class="mycell" title="员工姓名">
  <input bindinput="bindInputChange" class="input" data-field="staff_name" placeholder="请输入本人姓名"></input>
@@ -13,8 +30,13 @@
 </mp-cells>
 </view>
 
-<button class="{{btnClass}}"  disabled="{{btnForbidden}}" bindtap="submit">
-  确认提交
+
+
+
+</view>
+
+<button class="{{btnClass}}" wx-if="{{showBtn}}" disabled="{{btnForbidden}}" bindtap="submit">
+  {{btnText}}
 </button>
 
 <view class="pg_footer">
