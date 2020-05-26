@@ -1,6 +1,10 @@
 {
-  "usingComponents": {},
-  "backgroundColor": "#F6F6F6",
+  "usingComponents": {
+    "mp-cells": "../../components/weui/cells/cells",
+    "mp-cell": "../../components/weui/cell/cell",
+    "mp-slideview": "../../components/weui/slideview/slideview"
+  },
+  "backgroundColor": "#FFF",
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#fff",
   "navigationBarTitleText": "老熟人-工单处理",

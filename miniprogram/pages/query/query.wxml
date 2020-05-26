@@ -28,13 +28,57 @@
    
 </view>
 <view class="pg_body">
- <view class="noresult">
+ <!-- <view class="noresult">
    <image src="../../images/noresult.png"></image>
    <view class="text">
     这里空空如也~
    </view>
+ </view> -->
+
+ <view calss="hasresult">
+  <mp-cells>
+   <mp-slideview  buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+    <view class="result_wrap">
+      <view class="img_wrap">
+       <image src="../../images/jd.png"></image>
+      </view>
+      <view class="con_wrap">
+        <view class="row0">
+        订单号:sjhd5GVHDJ5565
+        </view>
+        <view class="row1 row">
+         <view class="left">
+         创建人：赵俊飞
+         </view>
+         <view class="right">
+         创建时间：2020/5/26 21:18
+         </view>
+        </view>
+        <view class="row2 row">
+          <view class="left">
+         客户名：李四
+         </view>
+         <view class="right">
+         客户手机：13298333864
+         </view>
+        </view>
+          <view class="row3 row">
+          <view class="left">
+         状态：未打包
+         </view>
+         <view class="right">
+         打包： <label class="checkbox">
+             <checkbox value="cb" checked="true"/>
+             </label>
+         </view>
+        </view>
+      </view>
+    </view>
+   </mp-slideview>
+  </mp-cells>
  </view>
 </view>
 
 <view class="pg_footer">
+    
 </view>

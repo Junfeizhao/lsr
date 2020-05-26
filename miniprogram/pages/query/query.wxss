@@ -1,4 +1,8 @@
 /* miniprogram/pages/query/query.wxss */
+
+page{
+  background: #fff;
+}
 .wrap1{
   background: #fff;
   padding:10px 5px;
@@ -68,7 +72,7 @@
   text-align: center;
   margin:200px auto;
   width:150px;
-  height:120px;
+  /* height:120px; */
   /* border:1px solid black; */
 }
 .noresult image{
@@ -79,4 +83,66 @@
   font-size:14px;
   color:#666;
 }
+.result_wrap{
+  padding:10px;
+  width:100%;
+  /* height:120px; */
+  /* border:1px solid black; */
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+.img_wrap{
+  width:14%;
+  height:40px;
+  /* border:1px solid red; */
+}
+.img_wrap image{
+  width:40px;
+  height:40px;
+}
+.con_wrap{
+  font-size: 13px;
+  color:#666;
+  width:90%;
+  /* height:40px; */
+  /* border:1px solid red; */
+ display: flex;
+ flex-direction: column;
+}
+.con_wrap .row{
+  margin-top:5px;
+  display: flex;
+  justify-content:space-between;
+  width:100%;
+  height:20px;
+  /* border:1px solid blue; */
+}
+
+.row0{
+  color:#333;
+  font-size: 15px;
+}
+.row3{
+  position: relative;
+  /* border:1px solid black; */
+  display:block;
+  height:100px;
+}
+.checkbox {
+  position: absolute;
+  top:2px;
+ zoom: 70%;
+}
+
+.row .left{
+  /* border:1px solid black; */
+  width:35%;
+}
+
+.row .right{
+  /* border:1px solid black; */
+  width:63%;
+}
+
 

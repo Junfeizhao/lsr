@@ -1,13 +1,11 @@
 {
   "pages": [
+    "pages/query/query",
     "pages/home/home",
     "pages/create/create",
     "pages/createsuccess/createsuccess",
-    
-    
     "pages/prove/prove",
     "pages/provesuccess/provesuccess",
-    "pages/query/query",
     "pages/me/me",
     "pages/index/index",
     "pages/userConsole/userConsole",

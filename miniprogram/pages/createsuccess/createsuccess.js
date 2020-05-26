@@ -64,9 +64,11 @@ Page({
 
   },
   toCreate:function(){
-   wx.navigateTo({
+   wx.reLaunch({
      url: '../create/create',
    })
   }
+
+
 
 })
