@@ -2,10 +2,10 @@
    <view class="wrap1">
      <view class="input_wrap">
       <image style="width:20px;height:20px;" src="../../images/search.png"></image>
-      <input placeholder="请输入单号"></input>
+      <input bindinput="bindInputChange" placeholder="请输入单号"></input>
        <image style="z-index:999;" bindtap="scanCode" style="width:20px;height:20px;position:absolute;right:25px;" src="../../images/saomiao.png"></image>
      </view>
-     <view class="btn_wrap">
+     <view class="btn_wrap" bindtap="onQuery">
      查询
      </view>
    </view>
@@ -13,53 +13,54 @@
    </view>
    <view class="wrap2" bindtap="bindQueryClassifyChange">
      <view class="item_wrap">
-      <view class="{{class1}}" data-classnum="1">今日工单</view>
+      <view class="{{class1}}" data-classnum="1" data-classify="0">今日工单</view>
      </view>
   <view class="item_wrap">
-      <view  class="{{class2}}" data-classnum="2">订单号</view>
+      <view  class="{{class2}}" data-classnum="2" data-classify="1">订单号</view>
      </view>
     <view class="item_wrap">
-      <view  class="{{class3}}" data-classnum="3">客户名</view>
+      <view  class="{{class3}}" data-classnum="3" data-classify="2">客户名</view>
      </view>
     <view class="item_wrap">
-      <view  class="{{class4}}" data-classnum="4">客户手机</view>
+      <view  class="{{class4}}" data-classnum="4" data-classify="3">客户手机</view>
      </view>
    </view>
    
 </view>
 <view class="pg_body">
- <!-- <view class="noresult">
+ <view class="noresult" wx:if="{{work.length==0}}">
    <image src="../../images/noresult.png"></image>
    <view class="text">
     这里空空如也~
    </view>
- </view> -->
-
- <view calss="hasresult">
+ </view>
+ <view calss="hasresult" wx:else>
   <mp-cells>
-   <mp-slideview  buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
-    <view class="result_wrap">
+   <mp-slideview  wx:for="{{work}}" wx:for-index="index"  buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+    <view class="result_wrap" data-workid="{{work[index]._id}}" bindtouchstart="getWorkId">
       <view class="img_wrap">
-       <image src="../../images/jd.png"></image>
+       <image wx:if="{{work[index].express_type=='京东'}}" src="../../images/jd.png"></image>
+       <image wx:if="{{work[index].express_type=='顺丰'}}" src="../../images/sf.png"></image>
+       <image wx:if="{{work[index].express_type=='中通'}}" src="../../images/zt.jpg"></image>
       </view>
       <view class="con_wrap">
         <view class="row0">
-        订单号:sjhd5GVHDJ5565
+        订单号:{{work[index].goods_number}}
         </view>
         <view class="row1 row">
          <view class="left">
-         创建人：赵俊飞
+         创建人：{{work[index].create_staff}}
          </view>
          <view class="right">
-         创建时间：2020/5/26 21:18
+         创建时间：{{work[index].create_time}}
          </view>
         </view>
         <view class="row2 row">
           <view class="left">
-         客户名：李四
+         客户名：{{work[index].owner_name}}
          </view>
          <view class="right">
-         客户手机：13298333864
+         客户手机：{{work[index].owner_phone}}
          </view>
         </view>
           <view class="row3 row">
@@ -80,5 +81,7 @@
 </view>
 
 <view class="pg_footer">
-    
+     <mp-dialog title="操作" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+        <view>确认删除吗？</view>
+    </mp-dialog>
 </view>

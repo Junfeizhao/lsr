@@ -21,8 +21,8 @@
            <view class="weui-cells weui-cells_after-title" style="padding:10px 0;border:0;">
           <view class="weui-cell weui-cell_select">
                 <view class="weui-cell__bd">
-                    <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts}}">
-                        <view class="weui-select"> <span>快递类型</span><span style="margin-left:50px;color:#888;">{{accounts[accountIndex]}}</span></view>
+                    <picker bindchange="bindExpressChange" value="{{expressIndex}}" range="{{express}}">
+                        <view class="weui-select"> <span>快递类型</span><span style="margin-left:50px;color:#888;">{{express[expressIndex]}}</span></view>
                     </picker>
                 </view>
             </view>

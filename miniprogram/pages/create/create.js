@@ -9,8 +9,8 @@ Page({
     disabled:true,
     time:util.formatTime(new Date()),
     footerRight:'footer_right_default',
-    accounts: ["京东", "韵达", "申通"],
-    accountIndex: 0,
+    express: ["京东", "顺丰", "中通"],
+   expressIndex: 0,
     formData:{
       create_staff:'',
       create_staff_openid:"",
@@ -82,19 +82,19 @@ Page({
   onShareAppMessage: function () {
 
   },
-  bindAccountChange: function(e) {
-    // console.log('picker account 发生选择改变，携带值为', e.detail.value);
+  bindExpressChange: function(e) {
+    // console.log('picker express 发生选择改变，携带值为', e.detail.value);
     let value = e.detail.value;
     let express;
    if(value == 0){
     express="京东"
    }else if(value ==1){
-    express="韵达"
+    express="顺丰"
    }else if(value==2){
-    express="申通"
+    express="中通"
    }
     this.setData({
-        accountIndex: e.detail.value,
+        expressIndex: e.detail.value,
         [`formData.express_type`]:express
     })
 },

@@ -2,7 +2,8 @@
   "usingComponents": {
     "mp-cells": "../../components/weui/cells/cells",
     "mp-cell": "../../components/weui/cell/cell",
-    "mp-slideview": "../../components/weui/slideview/slideview"
+    "mp-slideview": "../../components/weui/slideview/slideview",
+    "mp-dialog": "../../components/weui/dialog/dialog"
   },
   "backgroundColor": "#FFF",
   "backgroundTextStyle": "light",
