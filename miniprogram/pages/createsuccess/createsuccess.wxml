@@ -17,8 +17,11 @@
   </view>
 </view>
 
-<view class="btn_wrap" bindtap="toCreate">
+<view class="btn_wrap1" bindtap="toCreate">
 完成
+</view>
+<view class="btn_wrap2" bindtap="toQuery">
+去打包
 </view>
 
 

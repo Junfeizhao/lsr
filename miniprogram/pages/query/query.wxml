@@ -35,13 +35,13 @@
    </view>
  </view>
  <view calss="hasresult" wx:else>
-  <mp-cells>
-   <mp-slideview  wx:for="{{work}}" wx:for-index="index"  buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
-    <view class="result_wrap" data-workid="{{work[index]._id}}" bindtouchstart="getWorkId">
+  <mp-cells wx:for="{{work}}" wx:for-index="index" style="margin-top:-2px;border-bottom:0px!important;">
+   <mp-slideview    buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+    <view class="result_wrap" data-workid="{{work[index]._id}}" bindtouchmove="getWorkId">
       <view class="img_wrap">
-       <image wx:if="{{work[index].express_type=='京东'}}" src="../../images/jd.png"></image>
-       <image wx:if="{{work[index].express_type=='顺丰'}}" src="../../images/sf.png"></image>
-       <image wx:if="{{work[index].express_type=='中通'}}" src="../../images/zt.jpg"></image>
+       <image  wx:if="{{work[index].express_type=='京东'}}" src="../../images/jd.png"></image>
+       <image  style="margin-left:5px; border-radius:4px;margin-top:3px;width:33px;height:32px;" wx:if="{{work[index].express_type=='顺丰'}}" src="../../images/sf.jpg"></image>
+       <image  style="border-radius:4px;margin-top:3px;width:33px;height:32px;" wx:if="{{work[index].express_type=='中通'}}" src="../../images/zt.jpg"></image>
       </view>
       <view class="con_wrap">
         <view class="row0">
@@ -55,6 +55,14 @@
          创建时间：{{work[index].create_time}}
          </view>
         </view>
+        <view class="row4 row">
+         <view class="left">
+         打包人：{{work[index].checked_staff}}
+         </view>
+         <view class="right">
+         打包时间：{{work[index].checked_time}}
+         </view>
+        </view>
         <view class="row2 row">
           <view class="left">
          客户名：{{work[index].owner_name}}
@@ -65,11 +73,19 @@
         </view>
           <view class="row3 row">
           <view class="left">
-         状态：未打包
+          <view wx:if="{{work[index].isChecked}}">
+             状态：已打包
+          </view>
+          <view wx:else>
+            状态：未打包
+          </view>
+         
          </view>
          <view class="right">
-         打包： <label class="checkbox">
-             <checkbox value="cb" checked="true"/>
+         打包： <label class="checkbox" >
+          <checkbox-group bindchange="bindCheckedChange" data-workid="{{work[index]._id}}">
+             <checkbox value="cb"  checked="{{work[index].isChecked}}" disabled="{{work[index].isChecked}}" />
+             </checkbox-group>
              </label>
          </view>
         </view>

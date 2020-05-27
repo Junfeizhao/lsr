@@ -211,9 +211,18 @@ createWork:function(){
     name: 'create',
     data: this.data.formData,
     success: res => {
-    //  console.log(res);
+    wx.cloud.callFunction({
+      name:'addcreateload',
+      data:{classify:'create',staff_name:that.data.formData.create_staff,staff_openid:that.data.formData.create_staff_openid,time:util.formatTime(new Date())},
+      success:res=>{
+            console.log(res);
     wx.navigateTo({
       url: '../createsuccess/createsuccess',
+    })
+      },
+      fail:err=>{
+        console.log(err);
+      }
     })
     },
     fail: err => {

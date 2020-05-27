@@ -26,7 +26,7 @@
   color:#444;
 }
 
-.btn_wrap{
+.btn_wrap1{
   background:rgb(254,118,33);
   color:#fff;
   font-size: 15px;
@@ -36,5 +36,19 @@
   width:65%;
   height:35px;
   border-radius: 3px;
-  margin:70px auto;
+  margin:0px auto;
+  margin-top:70px;
+}
+
+.btn_wrap2{
+  background:rgb(0,178,106);
+  color:#fff;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:65%;
+  height:35px;
+  border-radius: 3px;
+  margin:10px auto;
 }

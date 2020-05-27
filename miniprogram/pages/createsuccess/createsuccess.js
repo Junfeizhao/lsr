@@ -67,7 +67,13 @@ Page({
    wx.reLaunch({
      url: '../create/create',
    })
-  }
+  },
+
+  toQuery:function(){
+    wx.switchTab({
+      url: '../query/query',
+    })
+   }
 
 
 

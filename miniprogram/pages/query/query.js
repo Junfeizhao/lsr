@@ -6,6 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    proveInfo:{
+      staffName:'',
+      staffOpenId:"",
+      isProve:""
+    },
     deleteWorkId:'',
     buttons: [{text: '取消'}, {text: '确定'}],
     dialogShow:false,
@@ -32,6 +37,7 @@ Page({
    */
   onLoad: function (options) {
   this.onQuery();
+  this.onGetOpenid();
   },
 
   /**
@@ -129,7 +135,7 @@ Page({
         that.setData({
           work:res.result.data
         })
-        console.log(that.data.hasResult);
+
       },
       fail:err=>{
         console.log(err);
@@ -173,11 +179,93 @@ tapDialogButton(e) {
   }
 },
 getWorkId:function(e){
+  console.log(9999,e)
   console.log(e.currentTarget.dataset);
   this.setData({
     deleteWorkId:e.currentTarget.dataset.workid
   })
   console.log(this.data.deleteWorkId);
+},
+bindCheckedChange:function(e){
+  var that =this;
+// console.log(e.currentTarget.dataset.workid);
+if(this.data.proveInfo.isProve){
+  wx.cloud.callFunction({
+    name:'checked',
+    data:{workid:e.currentTarget.dataset.workid,
+      checked_time:util.formatTime(new Date()),
+      checked_staff:this.data.proveInfo.staffName,
+      checked_staff_openid:this.data.proveInfo.staffOpenId,
+      isChecked:1
+    },
+    success:res=>{
+       wx.cloud.callFunction({
+      name:'addcheckedload',
+      data:{classify:'checked',staff_name:that.data.proveInfo.staffName,staff_openid:that.data.proveInfo.staffOpenId,time:util.formatTime(new Date())},
+      success:res=>{
+            console.log(res);
+              that.onLoad();
+      },
+      fail:err=>{
+        console.log(err);
+      }
+    })
+    },
+    fail:err=>{
+      console.log(err);
+    }
+  })
+}else{
+  wx.showToast({
+    icon:'none',
+    title: '请先进行员工认证！',
+  })
 }
+
+},
+onGetOpenid: function() {
+  var that =this;
+  // 调用云函数
+  wx.cloud.callFunction({
+    name: 'login',
+    data: {},
+    success: res => {
+      console.log('[云函数] [login] user openid: ', res.result.openid);
+      that.setData({
+        [`proveInfo.staffOpenId`]: res.result.openid
+      })
+      that.onQueryProve(res.result.openid);
+     
+    },
+    fail: err => {
+      console.error('[云函数] [login] 调用失败', err)
+    }
+  })
+},
+onQueryProve:function(openid){
+  var that =this;
+   // 调用云函数
+   wx.cloud.callFunction({
+     name: 'queryprove',
+     data: {openid:openid},
+     success: res => {
+       console.log(res.result.data[0])
+       if(res.result.data.length>0){
+         this.setData({
+         [`proveInfo.isProve`]:true,
+          [`proveInfo.staffName`]:res.result.data[0].staff_name
+        })
+        // console.log(8877,this.data.proveInfo);
+       }else{
+         that.setData({
+           [`proveInfo.isProve`]:false,
+         })
+       }
+     },
+     fail: err => {
+       console.log(err)
+     }
+   })
+},
 
 })

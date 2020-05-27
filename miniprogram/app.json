@@ -1,16 +1,15 @@
 {
   "pages": [
-    "pages/query/query",
     "pages/home/home",
-    "pages/create/create",
     "pages/createsuccess/createsuccess",
+    "pages/query/query",
+    "pages/create/create",
     "pages/prove/prove",
     "pages/provesuccess/provesuccess",
     "pages/me/me",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
