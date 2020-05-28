@@ -37,7 +37,7 @@
  <view calss="hasresult" wx:else>
   <mp-cells wx:for="{{work}}" wx:for-index="index" style="margin-top:-2px;border-bottom:0px!important;">
    <mp-slideview    buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
-    <view class="result_wrap" data-workid="{{work[index]._id}}" bindtouchmove="getWorkId">
+    <view class="result_wrap"  data-work="{{work[index]}}" bindtouchmove="getWorkId">
       <view class="img_wrap">
        <image  wx:if="{{work[index].express_type=='京东'}}" src="../../images/jd.png"></image>
        <image  style="margin-left:5px; border-radius:4px;margin-top:3px;width:33px;height:32px;" wx:if="{{work[index].express_type=='顺丰'}}" src="../../images/sf.jpg"></image>
@@ -55,7 +55,7 @@
          创建时间：{{work[index].create_time}}
          </view>
         </view>
-        <view class="row4 row">
+        <view class="row4 row" wx:if="{{work[index].isChecked}}">
          <view class="left">
          打包人：{{work[index].checked_staff}}
          </view>

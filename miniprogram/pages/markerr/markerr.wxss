@@ -1,0 +1,81 @@
+/* miniprogram/pages/markerr/markerr.wxss */
+
+.pg_footer{
+  padding:12px 0;
+  font-size: 14px;
+  color:#333;
+  width:100%;
+  height:240px;
+  background: #fff;
+  flex:0 0 auto;
+}
+.title{
+  /* border:1px solid black; */
+  padding-left:20px;
+
+}
+.staff_wrap{
+  margin-top: 3px;
+  align-items: center;
+  width:100%;
+  display:flex;
+  height:35px;
+  /* border:1px solid black; */
+ 
+}
+.item_default{
+  margin-left:20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:120px;
+  height:25px;
+  background: rgb(247,247,247);
+}
+.item_active{
+  margin-left:20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:120px;
+  height:25px;
+  color: rgb(217,167,115);
+  background: rgb(255,229,216);
+}
+.textareawrap{
+  padding-left:20px;
+  /* border:1px solid red; */
+}
+.textareawrap textarea{
+margin-top:7px;
+width:100%;
+height:60px;
+background:rgb(248,248,248);
+border-radius: 3px;
+text-indent:6px;
+}
+.title2{
+  margin-top: 15px;
+}
+.btn{
+  width:200px;
+  height: 35px;
+  margin:0 auto;
+  margin-top: 16px;
+  background: rgb(0,178,106);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+  border-radius: 5px;
+}
+.line{
+  margin-top: 16px;
+  width:100%;
+  height:1px;
+  background: #eee;
+}
+
+

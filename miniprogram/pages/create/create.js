@@ -12,6 +12,7 @@ Page({
     express: ["京东", "顺丰", "中通"],
    expressIndex: 0,
     formData:{
+      isChecked:0,
       create_staff:'',
       create_staff_openid:"",
       goods_number:"",

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+
+    "mp-cells": "../../components/weui/cells/cells",
+      "mp-cell": "../../components/weui/cell/cell",
+      "mp-halfScreenDialog": "../../components/weui/half-screen-dialog/half-screen-dialog"
+  },
+  "navigationBarTitleText": "老熟人-错误标记",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff"
+}

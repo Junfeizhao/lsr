@@ -11,7 +11,7 @@ Page({
       staffOpenId:"",
       isProve:""
     },
-    deleteWorkId:'',
+    bindWork:{},
     buttons: [{text: '取消'}, {text: '确定'}],
     dialogShow:false,
     work:[],
@@ -143,11 +143,16 @@ Page({
     })
   },
   slideButtonTap(e) {
-    console.log(99,e);
+    var that =this;
+    // console.log(99,e);
     var index = e.detail.index;
-    console.log(index);
+    // console.log(index);
     if(index==0){
-
+        console.log(998);
+        wx.navigateTo({
+          url: `../markerr/markerr?create_staff=${that.data.bindWork.create_staff}&checked_staff=${that.data.bindWork.checked_staff}&create_staff_openid=${that.data.bindWork.create_staff_openid}&checked_staff_openid=${that.data.bindWork.checked_staff_openid}&isChecked=${that.data.bindWork.isChecked}`
+        })
+      
     }else if(index==1){
        this.setData({
         dialogShow:true
@@ -164,7 +169,7 @@ tapDialogButton(e) {
   if(e.detail.index==1){
     wx.cloud.callFunction({
       name:'deletework',
-      data:{workid:that.data.deleteWorkId},
+      data:{workid:that.data.bindWork._id},
       success:res=>{
         console.log(res);
         wx.showToast({
@@ -179,12 +184,12 @@ tapDialogButton(e) {
   }
 },
 getWorkId:function(e){
-  console.log(9999,e)
-  console.log(e.currentTarget.dataset);
+  // console.log(9999,e)
+  // console.log(e.currentTarget.dataset);
   this.setData({
-    deleteWorkId:e.currentTarget.dataset.workid
+    bindWork:e.currentTarget.dataset.work
   })
-  console.log(this.data.deleteWorkId);
+  // console.log(this.data.bindWork);
 },
 bindCheckedChange:function(e){
   var that =this;
@@ -267,5 +272,8 @@ onQueryProve:function(openid){
      }
    })
 },
+
+
+
 
 })

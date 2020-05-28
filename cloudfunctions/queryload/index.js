@@ -7,8 +7,10 @@ cloud.init()
 exports.main = async (event, context) => {
   const db = cloud.database();
   console.log(event);
-  return await db.collection('work').add({
-    data: event
-  })
- return event
+  return await db.collection('load').where({
+    staff_openid:event.staff_openid,
+    classify:event.classify,
+    tiem:event.time
+
+  }).count();
 }

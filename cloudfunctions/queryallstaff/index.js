@@ -7,8 +7,5 @@ cloud.init()
 exports.main = async (event, context) => {
   const db = cloud.database();
   console.log(event);
-  return await db.collection('work').add({
-    data: event
-  })
- return event
+  return await db.collection('proveinfo').get();
 }

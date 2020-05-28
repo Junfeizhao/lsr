@@ -1,0 +1,35 @@
+<!--miniprogram/pages/markerr/markerr.wxml-->
+<view class="pg_wrap">
+
+<view class="pg_header">
+</view>
+
+<view class="pg_body">
+</view>
+
+<view class="pg_footer">
+ <view class="title title1">
+  追责人
+ </view>
+ <view class="staff_wrap" >
+  <view class="{{item1Class}}" bindtap="selectStaff1" data-staffs="{{staffs}}">
+  创建人：{{staffs.create_staff}}
+  </view>
+  <view class="{{item2Class}}"  wx:if="{{staffs.isChecked}}" bindtap="selectStaff2" data-staffs="{{staffs}}">
+  打包人：{{staffs.checked_staff}}
+  </view>
+ </view>
+  <view class="title title2">
+  备注
+ </view>
+ <view class="textareawrap">
+  <textarea bindinput="inputChange">
+  </textarea>
+ </view>
+ <view class="line">
+ </view>
+ <view class="btn" bindtap="submit">
+ 确定
+ </view>
+</view>
+</view>

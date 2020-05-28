@@ -1,0 +1,16 @@
+/* pages/dayload/dayload.wxss */
+
+.row{
+  margin-top:5px;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  justify-content: space-evenly;
+}
+.staff_name{
+  /* border:1px solid black; */
+  width:100%;
+  text-align: center;
+  font-size: 16px;
+  color:#444;
+}

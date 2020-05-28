@@ -1,2 +1,20 @@
 <!--miniprogram/pages/workload/workload.wxml-->
-<text>miniprogram/pages/workload/workload.wxml</text>
+<view class="pg_header">
+</view>
+
+<view class="pg_body">
+<view class="wrap1">
+<view class="item" bindtap="toDayLoad">
+ 日度报告
+</view>
+<view class="item">
+月度报告
+</view>
+<view class="item">
+年度报告
+</view>
+</view>
+</view>
+
+<view class="pg_footer">
+</view>

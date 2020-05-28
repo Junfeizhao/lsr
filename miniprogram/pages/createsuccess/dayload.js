@@ -1,4 +1,4 @@
-// miniprogram/pages/workload/workload.js
+// miniprogram/pages/createsuccess/dayload.js
 Page({
 
   /**
@@ -62,10 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  toDayLoad:function() {
-     wx.navigateTo({
-      url: '../dayload/dayload',
-    })
   }
 })
