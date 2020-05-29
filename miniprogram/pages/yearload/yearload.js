@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    queryTime:util.timeToDay(new Date()),
+    queryTime:util.timeToYear(new Date()),
     class1:"item_active",
     class2:"item_default",
     class3:"item_default",
@@ -88,10 +88,10 @@ Page({
              })
         }
         // console.log(that.data.staffs)
-        this.queryCreatLoad(util.timeToDay(new Date()));
-        this.queryCheckedLoad(util.timeToDay(new Date()));
-        this.queryCreatErr(util.timeToDay(new Date()));
-        this.queryCheckedErr(util.timeToDay(new Date()));
+        this.queryCreatLoad(util.timeToMonth(new Date()));
+        this.queryCheckedLoad(util.timeToMonth(new Date()));
+        this.queryCreatErr(util.timeToMonth(new Date()));
+        this.queryCheckedErr(util.timeToMonth(new Date()));
       },
       fail:err=>{
         console.log(err);
@@ -265,14 +265,10 @@ Page({
     });
   },
   queryByclassicy:function(classify){
-    var day1 = new Date();
-    day1.setTime(day1.getTime()-Number(classify)*24*60*60*1000);
-    var year = day1.getFullYear();
-    var month = day1.getMonth()+1;
-    var day = day1.getDate();
-    month=month.toString().length>1?month:'0'+month;
-    day=day.toString().length>1?day:'0'+day;
-    var s1 =year+'/'+month+'/'+day;
+    var date = new Date();
+    console.log('classify',classify);
+    let  year = date.getFullYear();
+     var s1 =year -classify;
     console.log(s1);
     this.queryCreatLoad(s1)
     this.queryCheckedLoad(s1)
@@ -311,5 +307,11 @@ Page({
     this.queryCheckedLoad(time);
     this.queryCreatErr(time);
     this.queryCheckedErr(time);
-  }
+  },
+ getQueryMonth:function(classify) {
+ var date = new Date();
+ let  year = date.getFullYear();
+ let month = date.getMonth()+1;
+ let month1=month-classify>1?month-1:13-classify;
+}
 })

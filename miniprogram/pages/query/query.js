@@ -150,7 +150,7 @@ Page({
     if(index==0){
         console.log(998);
         wx.navigateTo({
-          url: `../markerr/markerr?create_staff=${that.data.bindWork.create_staff}&checked_staff=${that.data.bindWork.checked_staff}&create_staff_openid=${that.data.bindWork.create_staff_openid}&checked_staff_openid=${that.data.bindWork.checked_staff_openid}&isChecked=${that.data.bindWork.isChecked}`
+          url: `../markerr/markerr?create_staff=${that.data.bindWork.create_staff}&checked_staff=${that.data.bindWork.checked_staff}&create_staff_openid=${that.data.bindWork.create_staff_openid}&checked_staff_openid=${that.data.bindWork.checked_staff_openid}&isChecked=${that.data.bindWork.isChecked}&create_time=${that.data.bindWork.create_time}`
         })
       
     }else if(index==1){

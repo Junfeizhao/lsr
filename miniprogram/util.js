@@ -21,6 +21,25 @@ const timeToDay= date=>{
   
 }
 
+const timeToMonth= date=>{
+  const year = date.getFullYear();
+  const month = date.getMonth()+1;
+ 
+  
+  return [year,month].map(formatNumber).join('/')
+  
+  
+}
+
+const timeToYear= date=>{
+  const year = date.getFullYear();
+  const month = date.getMonth()+1;
+
+  return year;
+  
+}
+
+
 const formatNumber=n=>{
   n=n.toString();
   return n[1]?n:"0"+n;
@@ -28,5 +47,7 @@ const formatNumber=n=>{
 
 module.exports={
   formatTime:formatTime,
-  timeToDay: timeToDay
+  timeToDay: timeToDay,
+  timeToMonth:timeToMonth,
+  timeToYear:timeToYear
 }

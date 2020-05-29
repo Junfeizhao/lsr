@@ -7,10 +7,10 @@
 <view class="item" bindtap="toDayLoad">
  日度报告
 </view>
-<view class="item">
+<view class="item" bindtap="toMonthLoad">
 月度报告
 </view>
-<view class="item">
+<view class="item" bindtap="toYearLoad">
 年度报告
 </view>
 </view>

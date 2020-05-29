@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+
+    "mp-cells": "../../components/weui/cells/cells",
+      "mp-cell": "../../components/weui/cell/cell"
+  },
+  "navigationBarTitleText": "老熟人-年度报告",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff"
+}

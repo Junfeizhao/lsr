@@ -67,5 +67,15 @@ Page({
      wx.navigateTo({
       url: '../dayload/dayload',
     })
-  }
+  },
+  toMonthLoad:function() {
+    wx.navigateTo({
+     url: '../monthload/monthload',
+   })
+ },
+ toYearLoad:function() {
+  wx.navigateTo({
+   url: '../yearload/yearload',
+ })
+}
 })

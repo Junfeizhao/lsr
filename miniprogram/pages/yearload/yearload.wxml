@@ -2,7 +2,7 @@
 <view class="pg_header">
    <view class="wrap1">
      <view class="input_wrap">
-    <picker fields="day" mode="date" value="{{queryTime}}" bindchange="bindDateChange">
+    <picker fields="year" mode="date" value="{{queryTime}}" bindchange="bindDateChange">
     <view class="picker">
       当前选择: {{queryTime}}
     </view>
@@ -17,13 +17,13 @@
    </view>
    <view class="wrap2" bindtap="bindQueryClassifyChange">
      <view class="item_wrap">
-      <view class="{{class1}}" data-classnum="1" data-classify="0">今日工单</view>
+      <view class="{{class1}}" data-classnum="1" data-classify="0">今年工单</view>
      </view>
   <view class="item_wrap">
-      <view  class="{{class2}}" data-classnum="2" data-classify="1">昨日工单</view>
+      <view  class="{{class2}}" data-classnum="2" data-classify="1">去年工单</view>
      </view>
     <view class="item_wrap">
-      <view  class="{{class3}}" data-classnum="3" data-classify="2">前日工单</view>
+      <view  class="{{class3}}" data-classnum="3" data-classify="2">前年工单</view>
      </view>
    </view>
    
@@ -32,7 +32,7 @@
 <mp-cells>
 <mp-cell>
 <view class="all_title" style="font-size:15px;color:#555;">
-       日总计
+       年总计
       </view>
   <view class="row row1" >
          <view class="left">
@@ -68,7 +68,7 @@
      </view>
       <view class="row row2">
         <view class="right">
-          今日工资：{{staffs[index].create*1+staffs[index].checked*5-staffs[index].create_err*1-staffs[index].checked_err*5}}
+        今年工资：{{staffs[index].create*1+staffs[index].checked*5-staffs[index].create_err*1-staffs[index].checked_err*5}}
         </view>
       <view class="left">
          打包数：{{staffs[index].checked}}  

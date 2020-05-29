@@ -17,7 +17,8 @@ Page({
        create_staff:'',
        create_staff_openid:'',
        checked_staff:'',
-       checked_staff_openid:''
+       checked_staff_openid:'',
+       create_time:''
      }
 
   },
@@ -94,7 +95,8 @@ Page({
           item1Class:'item_active',
           [`formData.isCreateErr`]:1,
           [`formData.create_staff`]:e.target.dataset.staffs.create_staff,
-          [`formData.create_staff_openid`]:e.target.dataset.staffs.create_staff_openid
+          [`formData.create_staff_openid`]:e.target.dataset.staffs.create_staff_openid,
+          [`formData.create_time`]:e.target.dataset.staffs.create_time
         })
     }else{
       console.log("未选中");
@@ -117,7 +119,8 @@ Page({
           item2Class:'item_active',
           [`formData.isCheckedErr`]:1,
           [`formData.checked_staff`]:e.target.dataset.staffs.checked_staff,
-          [`formData.checked_staff_openid`]:e.target.dataset.staffs.checked_staff_openid
+          [`formData.checked_staff_openid`]:e.target.dataset.staffs.checked_staff_openid,
+          [`formData.create_time`]:e.target.dataset.staffs.create_time
         })
     }else{
       console.log("未选中");

@@ -1,11 +1,12 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/yearload/yearload",
+    
+    "pages/monthload/monthload",
+    "pages/dayload/dayload",
     "pages/markerr/markerr",
     "pages/query/query",
-    
-   
-    "pages/dayload/dayload",
     "pages/workload/workload",
     "pages/createsuccess/createsuccess",
     "pages/create/create",
