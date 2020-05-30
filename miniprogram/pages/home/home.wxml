@@ -65,7 +65,7 @@
        </view>
        <view class="liney">
        </view>
-       <view class="right">
+       <view class="right" bindtap="toLoad">
         <view class="img-wrap">
           <image src="../../images/load.png"></image>
         </view>

@@ -29,7 +29,8 @@ Page({
      class1:"item_active",
      class2:"item_default",
      class3:"item_default",
-     class4:"item_default"
+     class4:"item_default",
+     class5:"item_default"
   },
 
   /**
@@ -103,7 +104,8 @@ Page({
         class1:"item_default",
         class2:"item_default",
         class3:"item_default",
-        class4:"item_default"
+        class4:"item_default",
+        class5:"item_default"
       });
       this.setData({
         [`class${e.target.dataset.classnum}`]:'item_active'

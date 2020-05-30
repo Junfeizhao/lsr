@@ -88,6 +88,11 @@ Page({
     wx.navigateTo({
       url: '../prove/prove',
     })
+  },
+  toLoad:function(){
+   wx.switchTab({
+     url: '../workload/workload',
+   })
   }
 
 

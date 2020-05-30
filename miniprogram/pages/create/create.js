@@ -189,6 +189,14 @@ timer:function(){
 
 createWork:function(){
   let that =this;
+  console.log(this.data.proveInfo.isProve)
+  if(!this.data.proveInfo.isProve){
+    wx.showToast({
+      icon:'none',
+      title: '请先进行员工认证！',
+    })
+    return
+  }
   function checkPhone(){ 
     let phone =that.data.formData.owner_phone;
     if(!(/^1[3456789]\d{9}$/.test(phone))){ 

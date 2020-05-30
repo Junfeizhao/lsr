@@ -2,7 +2,7 @@
    <view class="wrap1">
      <view class="input_wrap">
       <image style="width:20px;height:20px;" src="../../images/search.png"></image>
-      <input bindinput="bindInputChange" placeholder="请输入单号"></input>
+      <input bindinput="bindInputChange" value="{{formData.goods_number}}" placeholder="请输入单号"></input>
        <image style="z-index:999;" bindtap="scanCode" style="width:20px;height:20px;position:absolute;right:25px;" src="../../images/saomiao.png"></image>
      </view>
      <view class="btn_wrap" bindtap="onQuery">
@@ -13,7 +13,10 @@
    </view>
    <view class="wrap2" bindtap="bindQueryClassifyChange">
      <view class="item_wrap">
-      <view class="{{class1}}" data-classnum="1" data-classify="0">今日工单</view>
+      <view class="{{class1}}" data-classnum="1" data-classify="0">今日</view>
+     </view>
+      <view class="item_wrap">
+      <view class="{{class5}}" data-classnum="5" data-classify="4">未打包</view>
      </view>
   <view class="item_wrap">
       <view  class="{{class2}}" data-classnum="2" data-classify="1">订单号</view>

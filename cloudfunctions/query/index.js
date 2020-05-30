@@ -26,6 +26,10 @@ exports.main = async (event, context) => {
     return await db.collection('work').where({
       owner_phone:event.queryText
     }).get();
+  }else if(event.queryType==4){ //未打包查询
+    return await db.collection('work').where({
+      isChecked:0
+    }).get();
   }
 
 
